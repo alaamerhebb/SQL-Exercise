@@ -22,3 +22,33 @@
   update students
   set points='150'
   where name='Alex';
+
+Creating Table:
+
+. Create a table graduates:
+
+  CREATE TABLE Graduates (
+     ID Integer Not Null Primary key AUTOINCREMENT,
+	   Name Text Not Null Unique,
+	   Age Integer,
+	   Gender Text,
+     Points Integer,
+     Graduation Text
+	 );
+
+.Copy Layal's data from students to graduates:
+
+    INSERT INTO Graduates (Name, Age, Gender, Points)
+    SELECT Name, Age, Gender, Points FROM students
+    WHERE ID=4;    
+
+.Add the graduation date previously mentioned to Layal's record in graduates:
+
+    update Graduates
+    set Graduation='08/09/2018'
+    where ID='9';
+
+.Remove Layal's record from students:
+
+    DELETE FROM students WHERE ID='4'
+   
