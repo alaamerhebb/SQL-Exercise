@@ -69,3 +69,30 @@ Joins:
 3.Find the name of company that has a graphic designer.
 
    select name from employees where Role='Graphic Designer'
+
+
+Count & Filter:
+
+1.Find the person with the highest number of points in students
+
+   SELECT Name From Students WHERE Points = (SELECT MAX(Points) FROM Students)
+
+
+2.Find the average of points in students
+
+   SELECT AVG(points) from students
+
+
+3.Find the number of students that have 500 points
+
+   SELECT COUNT(name) FROM students WHERE Points = 500
+
+
+4.Find the names of students that contains 's'
+
+   SELECT Name FROM students WHERE Name LIKE '%s%'
+
+
+5.Find all students based on the decreasing order of their points
+
+   SELECT * FROM students ORDER by  Points DESC
