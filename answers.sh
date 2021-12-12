@@ -51,4 +51,21 @@ Creating Table:
 .Remove Layal's record from students:
 
     DELETE FROM students WHERE ID='4'
-   
+
+
+Joins:
+
+1.Produce a table that contains, for each employee, his/her name, company name, and company date.
+
+   CREATE TABLE experience AS
+   SELECT employees.Name, companies.Name, companies.Date
+   FROM employees, companies
+   WHERE employees.Company = companies.Name;
+
+2.Find the name of employees that work in companies made before 2000.
+  
+   select Name from experience WHERE Date<2000
+
+3.Find the name of company that has a graphic designer.
+
+   select name from employees where Role='Graphic Designer'
