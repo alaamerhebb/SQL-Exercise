@@ -57,18 +57,23 @@
 
 # 1.Produce a table that contains, for each employee, his/her name, company name, and company date.
 
-   CREATE TABLE experience AS
-   SELECT employees.Name, companies.Name, companies.Date
-   FROM employees, companies
-   WHERE employees.Company = companies.Name;
+    SELECT employees.Name, employees.Company, companies.Date 
+    FROM employees
+    INNER JOIN companies ON companies.Name = employees.Company;
 
 # 2.Find the name of employees that work in companies made before 2000.
   
-   select Name from experience WHERE Date<2000
+    SELECT employees.Name
+    FROM employees
+    INNER JOIN companies ON companies.Name = employees.Company
+    WHERE companies.Date < 2000;
 
 # 3.Find the name of company that has a graphic designer.
 
-   select name from employees where Role='Graphic Designer'
+    SELECT companies.Name
+    FROM employees
+    INNER JOIN companies ON companies.Name = employees.Company
+    WHERE employees.Role = 'Graphic Designer';
 
 
 # Count & Filter:
